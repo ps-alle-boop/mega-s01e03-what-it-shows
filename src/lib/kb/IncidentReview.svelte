@@ -29,7 +29,7 @@
   <tbody>
     <tr><td>Shared parser: month/day inversion</td><td>{parser.reports.length}</td><td>Tenant day-first locale; app/email or booking-v2 form. Includes the timing investigation below.</td><td>{#if links.parser}<a href={links.parser}>Parser issue</a>{:else}Draft prepared{/if}</td></tr>
     <tr><td>booking-v3: conflicting date hint</td><td>{hint.reports.length}</td><td>Day-first tenant; form channel; hint asks for MM/DD/YYYY but the form reads tenant order.</td><td>{#if links.hint}<a href={links.hint}>Hint issue</a>{:else}Draft prepared{/if}</td></tr>
-    <tr><td>Timing symptoms: investigate</td><td>{anomalous.length}, already within parser</td><td>Desk-note subset. One-day shifts and an invite reported before booking; root cause unproven.</td><td>{#if links.timing}<a href={links.timing}>Timing investigation</a>{:else}Draft prepared{/if}</td></tr>
+    <tr><td>Timing investigation within parser issue</td><td>{anomalous.length}, already within parser</td><td>Desk-note subset. One-day shifts and an invite reported before booking; root cause unproven.</td><td>{#if links.timing}<a href={links.timing}>Parser investigation section</a>{:else}Draft prepared{/if}</td></tr>
   </tbody>
 </table>
 

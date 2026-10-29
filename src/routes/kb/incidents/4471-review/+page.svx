@@ -23,7 +23,7 @@ Its own cause table distinguishes a shared parser defect from a booking-form hin
 The desk notes also flag timing symptoms whose cause remains unproved.
 
 <Callout>
-Keep the parser and hint defects in separate engineering tickets. Investigate the timing subset
+Keep the parser and hint defects in separate engineering tickets. Keep the timing investigation inside the parser ticket
 without assuming the date-order fix resolves it. The old “known” status does not establish that all reports have an explanation.
 </Callout>
 

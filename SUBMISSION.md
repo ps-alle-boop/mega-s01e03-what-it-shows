@@ -1,12 +1,13 @@
 # MEGA.dev S01E03 — what it shows
 
-The review separates the merged ticket's parser and form-hint defects and preserves five unresolved timing reports as an overlapping investigation.
+The review separates the merged ticket's parser and form-hint defects and preserves five unresolved timing reports as an investigation within the parser issue.
 
 | Issue | Reports covered |
 |---|---:|
 | [Shared parser](https://github.com/ps-alle-boop/mega-s01e03-what-it-shows/issues/1) | 379 |
 | [Booking-v3 date hint](https://github.com/ps-alle-boop/mega-s01e03-what-it-shows/issues/2) | 33 |
-| [Timing investigation](https://github.com/ps-alle-boop/mega-s01e03-what-it-shows/issues/3) | 5, already included in parser 379 |
+
+The parser issue also contains the investigation of five timing reports already included in its 379. Former issue #3 is closed as overlapping coverage.
 
 The total is 412 unique reports. The investigation does not add reports to that total.
 

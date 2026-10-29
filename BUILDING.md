@@ -36,7 +36,7 @@ explorer. The HTML already contains the computed tables, charts and desk stamps 
 
 Run the supplied `causes.ts` with tenant locale, booking-form version and channel. Deduplicate
 the export by report ID. Its current partition is parser 379 and hint 33, totaling 412.
-The five desk-noted timing anomalies remain a subset of parser 379 and have a separate investigation.
+The five desk-noted timing anomalies remain a subset of parser 379 and are investigated within the parser issue.
 Their underlying cause is unproved. Do not sum overlapping issue coverage to obtain a report total.
 
 `IncidentReview.svelte` computes the displayed figures from the source data. It does not infer
