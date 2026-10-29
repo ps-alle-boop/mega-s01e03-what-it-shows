@@ -1,0 +1,8 @@
+{
+  "source": "https://hq.mega.dev/challenges/what-it-shows#engineering-update",
+  "observedOn": "2026-10-29",
+  "ticket": 4471,
+  "closedOn": "2026-10-05",
+  "parser": { "status": "fixed", "note": "fix(dates): parse dd/mm for eu locales" },
+  "hint": { "status": "won't fix", "note": "booking-v3 form retired" }
+}

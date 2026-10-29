@@ -11,6 +11,10 @@ The parser issue also contains the investigation of five timing reports already 
 
 The total is 412 unique reports. The investigation does not add reports to that total.
 
+The course engineering update says #4471 closed on 5 October 2026. The parser was **fixed**
+(`fix(dates): parse dd/mm for eu locales`); the hint was **won't fix** because booking-v3 was
+retired. Issue #1 is closed as completed and issue #2 as not planned. The rendered review records these distinct outcomes.
+
 - [Signed incident review source](src/routes/kb/incidents/4471-review/+page.svx)
 - [Rendered incident review](rendered/kb/incidents/4471-review/index.html)
 - [Signed proposed decision 0002](src/routes/kb/decisions/0002-evidence-before-merge/+page.svx)

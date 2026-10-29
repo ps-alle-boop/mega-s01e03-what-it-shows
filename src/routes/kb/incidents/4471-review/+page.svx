@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 · split the problems by evidence'
 owner: Codex for ps-alle-boop
-status: proposed
+status: closed
 reviewed: '2026-10-29'
 signature: 'Codex for ps-alle-boop — S01E03'
 ---
@@ -13,18 +13,23 @@ signature: 'Codex for ps-alle-boop — S01E03'
   import QueueTimeline from '#lib/kb/QueueTimeline.svelte';
   import Callout from '#lib/kb/Callout.svelte';
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
+  import EngineeringUpdate from '#lib/kb/EngineeringUpdate.svelte';
 </script>
 
 This review uses the support export dated **4 October 2026**. It checks the report bodies,
-tenant directory and executable KB components. Later reports and desk changes require a refreshed source.
+tenant directory and executable KB components. The engineering update below supplies the desk's later disposition.
+
+## Engineering outcome
+
+<EngineeringUpdate />
 
 The [original incident page](/kb/incidents/4471) calls this one issue with one fix queued.
 Its own cause table distinguishes a shared parser defect from a booking-form hint defect.
 The desk notes also flag timing symptoms whose cause remains unproved.
 
 <Callout>
-Keep the parser and hint defects in separate engineering tickets. Keep the timing investigation inside the parser ticket
-without assuming the date-order fix resolves it. The old “known” status does not establish that all reports have an explanation.
+The parser and hint defects have separate tickets with different closure reasons. The timing investigation remains recorded
+inside the parser ticket. The desk update does not provide report-specific proof that the timing symptoms were resolved.
 </Callout>
 
 ## Problems and coverage
@@ -71,7 +76,7 @@ merging after the desk accepts it. Keep accepted decision 0001 intact as histori
 Compare the mechanism, product, tenant configuration and reproduction; subject lines and intake
 tags are clues. Keep unresolved reports separate until the evidence supports a merge.
 
-The issue drafts describe checks to perform. No production parser, booking form or mail system
+The original issue drafts describe proposed checks. No production parser, booking form or mail system
 was executed or repaired as part of this export review.
 
 <RenderStamp {signature} />

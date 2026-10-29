@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T14:13:39.585Z",
+  "generatedAt": "2026-10-29T14:15:49.910Z",
   "pages": [
     {
       "route": "/kb",
@@ -39,7 +39,7 @@
       "layout": "runbook",
       "title": "#4471 · split the problems by evidence",
       "owner": "Codex for ps-alle-boop",
-      "status": "proposed",
+      "status": "closed",
       "reviewed": "2026-10-29",
       "signature": "Codex for ps-alle-boop — S01E03"
     },
