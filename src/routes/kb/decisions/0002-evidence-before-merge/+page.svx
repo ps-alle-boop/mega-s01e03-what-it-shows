@@ -1,0 +1,77 @@
+---
+layout: runbook
+title: '0002 · Evidence before merging reports'
+owner: Codex for ps-alle-boop
+status: proposed
+reviewed: '2026-10-29'
+signature: 'Codex for ps-alle-boop — S01E03'
+---
+
+<script>
+  import DedupeExplorer from '#lib/kb/DedupeExplorer.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+## Context
+
+[The review of ticket #4471](/kb/incidents/4471-review) shows why a shared symptom does not
+establish a shared defect. A subject line can describe several causes, while different
+subjects can describe the same cause. An intake tag is an initial guess, not a diagnosis.
+
+[Decision 0001](/kb/decisions/0001-dedupe-by-subject) accepted merging on normalized subject
+alone. This proposed decision would supersede that rule when accepted. Decision 0001 remains
+unchanged as the record of the earlier decision.
+
+## Proposed decision
+
+Merge reports only when evidence supports the same defect in the same product and component.
+Use a subject match to find reports worth comparing, then read their bodies and examine the
+relevant context and reproduction evidence before deciding.
+
+For each comparison:
+
+1. Identify the product, affected component, tenant and path through the product.
+2. Record the expected behavior, observed behavior and steps or examples that reproduce it.
+3. Check the context that could distinguish causes, including tenant configuration, form
+   version, locale and time zone where relevant.
+4. Merge only when the evidence supports the same causal mechanism and a shared fix.
+   Keep distinct defects in separate issues, even when their subjects or visible symptoms match.
+5. Count each report ID once. Preserve its source and the evidence supporting its placement.
+
+When the cause is unknown, keep the report separate and link any plausible related issues.
+Record the missing evidence and the next check needed. Matching subjects, matching intake
+tags, or two unknown classifications do not justify a merge. Revisit the placement when new
+evidence arrives.
+
+## Check the date reports against the live views
+
+The date classifier in this export is specific to the booking paths under review in
+`sched-prod`. It uses the tenant's locale, booking-form version and report channel to
+distinguish parser and form-hint failures. The reporter's browser locale and the intake tag
+do not determine the tenant's date conventions.
+
+The explorer below makes that classifier's distinctions visible. Changing a subject does
+not change its cause verdict. Matching subjects can still have different causes, and reports
+without a known cause remain separate.
+
+<DedupeExplorer />
+
+The classifier is evidence about the paths it models, not a complete diagnosis of every
+report. If a report's observed behavior conflicts with its assigned group, investigate the
+discrepancy and document it in the [incident review](/kb/incidents/4471-review). Do not turn a
+model limitation into a reason to discard the report or merge a distinct defect.
+
+This date-specific classifier is not a universal rule for the desk's other products. Apply
+the evidence standard above using the relevant product's behavior and configuration.
+
+## Consequences and review
+
+Triage requires reading reports and sometimes reproducing a problem before merging them.
+Engineering receives separate issues for demonstrated defects, with traceable report counts
+and explicit uncertainty where diagnosis is incomplete.
+
+Review the written guidance against the live components and report evidence when the product
+or classifier changes. If this proposal is accepted, update the active triage guidance to
+point to it. Preserve accepted decision records; use a later record for a future replacement.
+
+<RenderStamp {signature} />

@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-10-29T11:57:06.782Z",
+  "pages": [
+    {
+      "route": "/kb",
+      "layout": "runbook",
+      "title": "Support knowledge base",
+      "owner": "support desk",
+      "status": "living",
+      "reviewed": "2026-09-28T00:00:00.000Z"
+    },
+    {
+      "route": "/kb/decisions/0001-dedupe-by-subject",
+      "layout": "runbook",
+      "title": "0001 · Duplicates share a subject line",
+      "owner": "rune",
+      "status": "accepted",
+      "reviewed": "2024-06-11T00:00:00.000Z"
+    },
+    {
+      "route": "/kb/decisions/0002-evidence-before-merge",
+      "layout": "runbook",
+      "title": "0002 · Evidence before merging reports",
+      "owner": "Codex for ps-alle-boop",
+      "status": "proposed",
+      "reviewed": "2026-10-29",
+      "signature": "Codex for ps-alle-boop — S01E03"
+    },
+    {
+      "route": "/kb/incidents/4471",
+      "layout": "runbook",
+      "title": "#4471 · dates parse mm/dd in eu locales",
+      "owner": "support desk",
+      "status": "known",
+      "reviewed": "2026-09-30T00:00:00.000Z"
+    },
+    {
+      "route": "/kb/incidents/4471-review",
+      "layout": "runbook",
+      "title": "#4471 · split the problems by evidence",
+      "owner": "Codex for ps-alle-boop",
+      "status": "proposed",
+      "reviewed": "2026-10-29",
+      "signature": "Codex for ps-alle-boop — S01E03"
+    },
+    {
+      "route": "/kb/triage/dedupe",
+      "layout": "runbook",
+      "title": "Triage: duplicate reports",
+      "owner": "support desk",
+      "status": "accepted",
+      "reviewed": "2024-06-11T00:00:00.000Z"
+    }
+  ]
+}

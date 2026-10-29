@@ -1,0 +1,77 @@
+---
+layout: runbook
+title: '#4471 · split the problems by evidence'
+owner: Codex for ps-alle-boop
+status: proposed
+reviewed: '2026-10-29'
+signature: 'Codex for ps-alle-boop — S01E03'
+---
+
+<script>
+  import IncidentReview from '#lib/kb/IncidentReview.svelte';
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import QueueTimeline from '#lib/kb/QueueTimeline.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+This review uses the support export dated **4 October 2026**. It checks the report bodies,
+tenant directory and executable KB components. Later reports and desk changes require a refreshed source.
+
+The [original incident page](/kb/incidents/4471) calls this one issue with one fix queued.
+Its own cause table distinguishes a shared parser defect from a booking-form hint defect.
+The desk notes also flag timing symptoms whose cause remains unproved.
+
+<Callout>
+Keep the parser and hint defects in separate engineering tickets. Investigate the timing subset
+without assuming the date-order fix resolves it. The old “known” status does not establish that all reports have an explanation.
+</Callout>
+
+## Problems and coverage
+
+<IncidentReview />
+
+## Shared parser: reads month before day
+
+For day-first tenants, the shared parser interprets a date in month-first order. The classifier
+assigns app/email reports and booking-v2 form reports to this group. Report `R-41200` says a
+7 April reminder went out for 4 July. Verify this path against the tenant's date contract and
+preserve the intended calendar date through parsing and serialization.
+
+This grouping is based on tenant configuration and intake path. The timing reports above
+remain a named exception requiring investigation; their inclusion is not proof of this root cause.
+
+## Booking-v3 form: hint and parser disagree
+
+The form displays `MM/DD/YYYY`, while its date reading follows the tenant's day-first order.
+The affected form reports come from Alder Physio, Copper Studio and Pale Harbour.
+Report `R-41230` describes 6 January becoming 1 June, although intake tagged it as a parser report.
+Align the visible hint and accepted input format, then verify that entering the intended date
+produces that date in storage and the invite.
+
+## What the current component computes
+
+<CauseTable ticket={4471} />
+
+The table is regenerated from distinct report IDs, the tenant directory and `causes.ts`.
+Its “not this ticket” row identifies a separate cause inside the merged incident.
+Its footnote preserves the timing reports even though this classifier has no separate timing category.
+
+## Queue history
+
+<QueueTimeline ticket={4471} />
+
+Received and merged bars represent different timestamps. Do not treat a merge spike as a sudden
+increase in incoming reports. Preserve both events in future incident reviews.
+
+## Triage change and follow-up
+
+Use [proposed decision 0002](/kb/decisions/0002-evidence-before-merge) to replace subject-only
+merging after the desk accepts it. Keep accepted decision 0001 intact as historical evidence.
+Compare the mechanism, product, tenant configuration and reproduction; subject lines and intake
+tags are clues. Keep unresolved reports separate until the evidence supports a merge.
+
+The issue drafts describe checks to perform. No production parser, booking form or mail system
+was executed or repaired as part of this export review.
+
+<RenderStamp {signature} />
