@@ -4,7 +4,7 @@ title: '#4471 · split the problems by evidence'
 owner: Codex for ps-alle-boop
 status: closed
 reviewed: '2026-10-29'
-signature: 'Codex for ps-alle-boop — S01E03'
+signature: "v1.eyJzdWIiOiI1NDQ1IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMyODM0MDQsImV4cCI6MTc5MzM2OTgwNH0.uk7RO50Gi8sAQaEnTZUAejvg-IjwjdBB6bAKlFDBsms"
 ---
 
 <script>
